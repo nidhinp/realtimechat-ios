@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (4.8.2)
+  - InputBarAccessoryView (4.2.2)
+  - MessageKit (3.0.0):
+    - InputBarAccessoryView (~> 4.2.2)
+  - Starscream (3.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - MessageKit
+  - Starscream
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - InputBarAccessoryView
+    - MessageKit
+    - Starscream
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  InputBarAccessoryView: 2b937602598e2fab3149f37f51dd7ad795653812
+  MessageKit: e892a9ca49ebe6d82684d3a93ad84021fa23e2c6
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+
+PODFILE CHECKSUM: 3d7b9a85ae1120a313cc44b0fcccb17cb01dc121
+
+COCOAPODS: 1.6.2
