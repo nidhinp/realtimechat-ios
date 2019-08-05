@@ -40,10 +40,10 @@ class LoginVC: UIViewController {
         return textField
     }()
     
-    let loginRegisterButton: UIButton = {
+    let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
-        button.setTitle("Register", for: .normal)
+        button.setTitle("Login", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
@@ -60,12 +60,13 @@ class LoginVC: UIViewController {
         return label
     }()
     
-    let signUpButton: UIButton = {
+    lazy var signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        button.addTarget(self, action: #selector(handleSignUpButtonClick), for: .touchUpInside)
         return button
     }()
     
@@ -113,26 +114,30 @@ extension LoginVC {
     }
     
     fileprivate func setUpLoginRegisterButton() {
-        view.addSubview(loginRegisterButton)
+        view.addSubview(loginButton)
         
-        loginRegisterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        loginRegisterButton.topAnchor.constraint(equalTo: inputContainerView.bottomAnchor, constant: 12).isActive = true
-        loginRegisterButton.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor).isActive = true
-        loginRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loginButton.topAnchor.constraint(equalTo: inputContainerView.bottomAnchor, constant: 12).isActive = true
+        loginButton.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor).isActive = true
+        loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     fileprivate func setUpSignUpSection() {
         view.addSubview(dontHaveAccountLabel)
         view.addSubview(signUpButton)
         
-        dontHaveAccountLabel.leadingAnchor.constraint(equalTo: loginRegisterButton.leadingAnchor).isActive = true
-        dontHaveAccountLabel.topAnchor.constraint(equalTo: loginRegisterButton.bottomAnchor, constant: 20).isActive = true
-        dontHaveAccountLabel.widthAnchor.constraint(equalTo: loginRegisterButton.widthAnchor, multiplier: 1/2).isActive = true
+        dontHaveAccountLabel.leadingAnchor.constraint(equalTo: loginButton.leadingAnchor).isActive = true
+        dontHaveAccountLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20).isActive = true
+        dontHaveAccountLabel.widthAnchor.constraint(equalTo: loginButton.widthAnchor, multiplier: 1/2).isActive = true
         dontHaveAccountLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         signUpButton.leadingAnchor.constraint(equalTo: dontHaveAccountLabel.trailingAnchor).isActive = true
-        signUpButton.topAnchor.constraint(equalTo: loginRegisterButton.bottomAnchor, constant: 20).isActive = true
-        signUpButton.widthAnchor.constraint(equalTo: loginRegisterButton.widthAnchor, multiplier: 1/2).isActive = true
+        signUpButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20).isActive = true
+        signUpButton.widthAnchor.constraint(equalTo: loginButton.widthAnchor, multiplier: 1/2).isActive = true
         signUpButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+    }
+    
+    @objc fileprivate func handleSignUpButtonClick() {
+        present(SignUpVC(), animated: true, completion: nil)
     }
 }

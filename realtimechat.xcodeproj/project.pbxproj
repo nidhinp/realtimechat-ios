@@ -8,25 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		1973EC8622F76F1500B3F97D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973EC8522F76F1500B3F97D /* AppDelegate.swift */; };
-		1973EC8822F76F1500B3F97D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973EC8722F76F1500B3F97D /* ViewController.swift */; };
 		1973EC8D22F76F1800B3F97D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1973EC8C22F76F1800B3F97D /* Assets.xcassets */; };
 		1973EC9022F76F1800B3F97D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1973EC8E22F76F1800B3F97D /* LaunchScreen.storyboard */; };
 		1973EC9A22F7704700B3F97D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973EC9922F7704700B3F97D /* User.swift */; };
 		1973EC9C22F770B600B3F97D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973EC9B22F770B600B3F97D /* LoginVC.swift */; };
 		1973EC9F22F7774300B3F97D /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973EC9E22F7774300B3F97D /* ColorExtensions.swift */; };
+		1973ECA122F8C00900B3F97D /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973ECA022F8C00900B3F97D /* UIViewExtensions.swift */; };
+		1973ECA322F8C1EC00B3F97D /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973ECA222F8C1EC00B3F97D /* SignUpVC.swift */; };
 		AD0B1662C7420EACA2476572 /* Pods_realtimechat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C60267F24C19B6790CCBAC /* Pods_realtimechat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1973EC8222F76F1500B3F97D /* realtimechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = realtimechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1973EC8522F76F1500B3F97D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1973EC8722F76F1500B3F97D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1973EC8C22F76F1800B3F97D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1973EC8F22F76F1800B3F97D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1973EC9122F76F1800B3F97D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1973EC9922F7704700B3F97D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1973EC9B22F770B600B3F97D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		1973EC9E22F7774300B3F97D /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		1973ECA022F8C00900B3F97D /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		1973ECA222F8C1EC00B3F97D /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		863CF46DC1B8025ACDAE70D4 /* Pods-realtimechat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-realtimechat.release.xcconfig"; path = "Target Support Files/Pods-realtimechat/Pods-realtimechat.release.xcconfig"; sourceTree = "<group>"; };
 		D2C60267F24C19B6790CCBAC /* Pods_realtimechat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_realtimechat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58C995D1B8FC6566B011D7F /* Pods-realtimechat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-realtimechat.debug.xcconfig"; path = "Target Support Files/Pods-realtimechat/Pods-realtimechat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,7 +71,6 @@
 				1973EC9822F7701900B3F97D /* ViewControllers */,
 				1973EC9722F7700900B3F97D /* Models */,
 				1973EC8522F76F1500B3F97D /* AppDelegate.swift */,
-				1973EC8722F76F1500B3F97D /* ViewController.swift */,
 				1973EC8C22F76F1800B3F97D /* Assets.xcassets */,
 				1973EC8E22F76F1800B3F97D /* LaunchScreen.storyboard */,
 				1973EC9122F76F1800B3F97D /* Info.plist */,
@@ -89,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				1973EC9B22F770B600B3F97D /* LoginVC.swift */,
+				1973ECA222F8C1EC00B3F97D /* SignUpVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				1973EC9E22F7774300B3F97D /* ColorExtensions.swift */,
+				1973ECA022F8C00900B3F97D /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -243,10 +246,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1973EC8822F76F1500B3F97D /* ViewController.swift in Sources */,
 				1973EC9F22F7774300B3F97D /* ColorExtensions.swift in Sources */,
+				1973ECA122F8C00900B3F97D /* UIViewExtensions.swift in Sources */,
 				1973EC8622F76F1500B3F97D /* AppDelegate.swift in Sources */,
 				1973EC9C22F770B600B3F97D /* LoginVC.swift in Sources */,
+				1973ECA322F8C1EC00B3F97D /* SignUpVC.swift in Sources */,
 				1973EC9A22F7704700B3F97D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
