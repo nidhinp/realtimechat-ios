@@ -15,6 +15,7 @@
 		1973EC9F22F7774300B3F97D /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973EC9E22F7774300B3F97D /* ColorExtensions.swift */; };
 		1973ECA122F8C00900B3F97D /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973ECA022F8C00900B3F97D /* UIViewExtensions.swift */; };
 		1973ECA322F8C1EC00B3F97D /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973ECA222F8C1EC00B3F97D /* SignUpVC.swift */; };
+		1973ECA622FA0EAB00B3F97D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973ECA522FA0EAB00B3F97D /* Colors.swift */; };
 		AD0B1662C7420EACA2476572 /* Pods_realtimechat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C60267F24C19B6790CCBAC /* Pods_realtimechat.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		1973EC9E22F7774300B3F97D /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		1973ECA022F8C00900B3F97D /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		1973ECA222F8C1EC00B3F97D /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		1973ECA522FA0EAB00B3F97D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		863CF46DC1B8025ACDAE70D4 /* Pods-realtimechat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-realtimechat.release.xcconfig"; path = "Target Support Files/Pods-realtimechat/Pods-realtimechat.release.xcconfig"; sourceTree = "<group>"; };
 		D2C60267F24C19B6790CCBAC /* Pods_realtimechat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_realtimechat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58C995D1B8FC6566B011D7F /* Pods-realtimechat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-realtimechat.debug.xcconfig"; path = "Target Support Files/Pods-realtimechat/Pods-realtimechat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		1973EC8422F76F1500B3F97D /* realtimechat */ = {
 			isa = PBXGroup;
 			children = (
+				1973ECA422FA0E9000B3F97D /* Resources */,
 				1973EC9D22F7771200B3F97D /* Extensions */,
 				1973EC9822F7701900B3F97D /* ViewControllers */,
 				1973EC9722F7700900B3F97D /* Models */,
@@ -102,6 +105,14 @@
 				1973ECA022F8C00900B3F97D /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1973ECA422FA0E9000B3F97D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1973ECA522FA0EAB00B3F97D /* Colors.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		1A06AF1BA97924194DBCA068 /* Frameworks */ = {
@@ -249,6 +260,7 @@
 				1973EC9F22F7774300B3F97D /* ColorExtensions.swift in Sources */,
 				1973ECA122F8C00900B3F97D /* UIViewExtensions.swift in Sources */,
 				1973EC8622F76F1500B3F97D /* AppDelegate.swift in Sources */,
+				1973ECA622FA0EAB00B3F97D /* Colors.swift in Sources */,
 				1973EC9C22F770B600B3F97D /* LoginVC.swift in Sources */,
 				1973ECA322F8C1EC00B3F97D /* SignUpVC.swift in Sources */,
 				1973EC9A22F7704700B3F97D /* User.swift in Sources */,

@@ -9,10 +9,12 @@
 import UIKit
 
 class LoginVC: UIViewController {
+    lazy var containerWidth = self.view.frame.width - 24
+    let containerHeight: CGFloat = 100
+    
     let inputContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 5
         view.layer.masksToBounds = true
         return view
@@ -21,14 +23,12 @@ class LoginVC: UIViewController {
     let usernameTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Username"
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
     let nameSeparatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(r: 220, g: 220, b: 220)
-        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = Colors.lineColor
         return view
     }()
     
@@ -36,15 +36,13 @@ class LoginVC: UIViewController {
         let textField = UITextField()
         textField.placeholder = "Password"
         textField.isSecureTextEntry = true
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
     let loginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.backgroundColor = Colors.secondary
         button.setTitle("Login", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return button
@@ -56,15 +54,13 @@ class LoginVC: UIViewController {
         label.textColor = .white
         label.textAlignment = .right
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(Colors.tertiary, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         button.addTarget(self, action: #selector(handleSignUpButtonClick), for: .touchUpInside)
         return button
@@ -72,7 +68,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(r: 61, g: 91, b: 151)
+        view.backgroundColor = Colors.primary
         
         setUpInputContainerView()
         setUpLoginRegisterButton()
@@ -87,54 +83,32 @@ class LoginVC: UIViewController {
 extension LoginVC {
     fileprivate func setUpInputContainerView() {
         view.addSubview(inputContainerView)
-        
-        inputContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        inputContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        inputContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-        inputContainerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        
         inputContainerView.addSubview(usernameTextField)
         inputContainerView.addSubview(nameSeparatorView)
         inputContainerView.addSubview(passwordTextField)
         
-        usernameTextField.leadingAnchor.constraint(equalTo: inputContainerView.leadingAnchor, constant: 12).isActive = true
-        usernameTextField.topAnchor.constraint(equalTo: inputContainerView.topAnchor).isActive = true
-        usernameTextField.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor).isActive = true
-        usernameTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: 1/2).isActive = true
+        inputContainerView.centerInSuperview(size: .init(width: containerWidth, height: containerHeight))
         
-        nameSeparatorView.leadingAnchor.constraint(equalTo: inputContainerView.leadingAnchor).isActive = true
-        nameSeparatorView.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor).isActive = true
-        nameSeparatorView.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor).isActive = true
-        nameSeparatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        usernameTextField.anchor(top: inputContainerView.topAnchor, leading: inputContainerView.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 0, left: 12, bottom: 0, right: 0), size: .init(width: containerWidth, height: containerHeight/2))
         
-        passwordTextField.leadingAnchor.constraint(equalTo: inputContainerView.leadingAnchor, constant: 12).isActive = true
-        passwordTextField.topAnchor.constraint(equalTo: nameSeparatorView.bottomAnchor).isActive = true
-        passwordTextField.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor).isActive = true
-        passwordTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: 1/2).isActive = true
+        nameSeparatorView.anchor(top: usernameTextField.bottomAnchor, leading: inputContainerView.leadingAnchor, bottom: nil, trailing: nil, padding: .zero, size: .init(width: containerWidth, height: 1))
+        
+        passwordTextField.anchor(top: nameSeparatorView.bottomAnchor, leading: inputContainerView.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 0, left: 12, bottom: 0, right: 0), size: .init(width: containerWidth, height: containerHeight/2))
     }
     
     fileprivate func setUpLoginRegisterButton() {
         view.addSubview(loginButton)
         
-        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        loginButton.topAnchor.constraint(equalTo: inputContainerView.bottomAnchor, constant: 12).isActive = true
-        loginButton.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor).isActive = true
-        loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        loginButton.anchor(top: inputContainerView.bottomAnchor, leading: inputContainerView.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 12, left: 0, bottom: 0, right: 0), size: .init(width: containerWidth, height: containerHeight/2))
     }
     
     fileprivate func setUpSignUpSection() {
         view.addSubview(dontHaveAccountLabel)
         view.addSubview(signUpButton)
         
-        dontHaveAccountLabel.leadingAnchor.constraint(equalTo: loginButton.leadingAnchor).isActive = true
-        dontHaveAccountLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20).isActive = true
-        dontHaveAccountLabel.widthAnchor.constraint(equalTo: loginButton.widthAnchor, multiplier: 1/2).isActive = true
-        dontHaveAccountLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        dontHaveAccountLabel.anchor(top: loginButton.bottomAnchor, leading: loginButton.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 20, left: 0, bottom: 0, right: 0), size: .init(width: containerWidth/2, height: 20))
         
-        signUpButton.leadingAnchor.constraint(equalTo: dontHaveAccountLabel.trailingAnchor).isActive = true
-        signUpButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20).isActive = true
-        signUpButton.widthAnchor.constraint(equalTo: loginButton.widthAnchor, multiplier: 1/2).isActive = true
-        signUpButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        signUpButton.anchor(top: loginButton.bottomAnchor, leading: dontHaveAccountLabel.trailingAnchor, bottom: nil, trailing: nil, padding: .init(top: 20, left: 0, bottom: 0, right: 0), size: .init(width: containerWidth/2, height: 20))
     }
     
     @objc fileprivate func handleSignUpButtonClick() {
